@@ -1,0 +1,33 @@
+Creat CSV Files -
+--------------------------------------------------------
+Beanshell Code
+
+import java.io.File;
+import org.apache.jmeter.services.Fileservers;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.io.Writer;
+
+File file = new File("c:\\sample.csv");
+FileWriter fstream = new FileWriter(file, true);
+BufferedWriter out = new BufferedWriter(fstream);
+out.write("username");
+out.close();
+fstream.close();
+==================================================
+JSR223 Sampler
+
+import java.io.File;
+import org.apache.jmeter.services.Fileservers;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.io.Writer;
+
+f = new FileOutputStream("c:\\sample1.csv", true);
+p = new PrintStream(f);
+this.interpreter.setOut(p);
+print("username" + "," + "Password" + "," + "address");
+f.close();
+------------------------------------------------------------
